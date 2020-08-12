@@ -42,7 +42,7 @@ namespace SalesWebMvc.Services
                 _context.Seller.Remove(seller);
                 await _context.SaveChangesAsync();
             }
-            catch (DbUpdateException e)
+            catch (DbUpdateException)
             {
                 throw new IntegrityException("Não é possível deletar este vendador pois ele possui vendas.");
             }
